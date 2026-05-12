@@ -1,0 +1,5 @@
+marketing
+T.I
+Gerencia
+supervisão
+admin (que vai cuidar de quem acessa isso "dono")
