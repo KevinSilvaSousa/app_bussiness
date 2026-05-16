@@ -2,7 +2,12 @@
 from rest_framework import viewsets
 from .models import *
 from .serializer import *
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 class FuncionarioGerenciaViewSet(viewsets.ModelViewSet):
-    queryset = FuncionarioGerencia.objects.all()
-    serializer_class = FuncionarioGerenciaSerializer
+     authentication_classes = [SessionAuthentication, BasicAuthentication]
+     permission_classes = [IsAuthenticated]
+    
+     queryset = FuncionarioGerenciaModel.objects.all()
+     serializer_class = FuncionarioGerenciaSerializer

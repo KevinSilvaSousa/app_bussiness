@@ -3,5 +3,5 @@ from .models import *
 
 class FuncionarioTiSerializer(serializers.ModelSerializer):
     class Meta:
-        model = FuncionarioTi
+        model = FuncionarioTiModel
         fields = ['nome', 'funcionario', 'tecnologia', 'graduacao']

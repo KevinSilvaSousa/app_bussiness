@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import FuncionarioBase
+from .models import FuncionarioBaseModel
 
 # Register your models here.
 
-admin.site.register(FuncionarioBase)
+admin.site.register(FuncionarioBaseModel)
 

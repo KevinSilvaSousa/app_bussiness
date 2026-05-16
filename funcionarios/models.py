@@ -1,6 +1,6 @@
 from django.db import models
 
-class FuncionarioBase(models.Model):
+class FuncionarioBaseModel(models.Model):
     nome = models.CharField(max_length=100, null=False, blank=False)
     formacao = models.CharField(max_length=100,null=False, blank=False)
     email = models.EmailField(max_length=100, null=False, blank=False, unique=True)
