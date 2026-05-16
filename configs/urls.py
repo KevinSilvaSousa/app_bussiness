@@ -1,19 +1,18 @@
 from django.contrib import admin
-from django.urls import path
-from funcionarios.views import FuncionarioBaseView
-from gerencia.views import FuncionarioGerenciaView
-from marketing.views import FuncionarioMarketingView
-from ti.views import FuncionarioTiView
+from django.urls import path, include
+from funcionarios.views import FuncionarioBaseViewSet
+from gerencia.views import FuncionarioGerenciaViewSet
+from marketing.views import FuncionarioMarketingViewSet
+from ti.views import FuncionarioTiViewSets
+from rest_framework.routers import DefaultRouter
 
+router = DefaultRouter()
+router.register("funcionarios", FuncionarioBaseViewSet)
+router.register("gerencia", FuncionarioGerenciaViewSet)
+router.register("marketing", FuncionarioMarketingViewSet)
+router.register("ti", FuncionarioTiViewSets)
 
 urlpatterns = [
+    path("", include(router.urls)),
     path('admin/', admin.site.urls),
-    path("funcionarios/", FuncionarioBaseView),
-    path("funcionarios/<int:pk>/", FuncionarioBaseView),
-    path("gerencia/", FuncionarioGerenciaView),
-    path("gerencia/<int:pk>/", FuncionarioGerenciaView),
-    path("marketing/", FuncionarioMarketingView),
-    path("marketing/<int:pk>/", FuncionarioMarketingView),
-    path("ti/", FuncionarioTiView),
-    path("ti/<int:pk>/", FuncionarioTiView),
 ]
