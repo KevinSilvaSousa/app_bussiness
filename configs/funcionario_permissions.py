@@ -1,0 +1,13 @@
+from rest_framework.permissions import BasePermission
+from funcionarios.models import FuncionarioBaseModel 
+
+class FuncionarioBasePermission(BasePermission):
+    message = 'Acesso negado. Usuário não identificado como funcionário ativo.'
+
+    def has_permission(self, request, view):
+        if not request.is_authenticated == True:
+
+        if not request.user or not request.user.is_authenticated:
+            return False
+            
+        return FuncionarioBaseModel.objects.filter(id=request.user.id).exists()
