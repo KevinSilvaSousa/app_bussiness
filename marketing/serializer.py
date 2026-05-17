@@ -5,4 +5,4 @@ class FuncionarioMarketingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = FuncionarioMarketingModel
-        fields = ['nome', 'funcionario', 'area_atuacao', 'graduacao', 'redes_sociais', 'campanhas_ativas']
+        fields = ['funcionario', 'area_atuacao', 'redes_sociais', 'campanhas_ativas']

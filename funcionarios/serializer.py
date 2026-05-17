@@ -4,4 +4,4 @@ from .models import *
 class FuncionarioBaseSerializer(serializers.ModelSerializer):
     class Meta:
         model = FuncionarioBaseModel
-        fields = ["nome", "formacao", "email", "telefone", "data_nascimento"]
+        fields = ["nome", "formacao", "email", "telefone", "data_nascimento", 'area_atuacao']

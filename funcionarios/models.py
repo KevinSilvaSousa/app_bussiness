@@ -6,3 +6,8 @@ class FuncionarioBaseModel(models.Model):
     email = models.EmailField(max_length=100, null=False, blank=False, unique=True)
     telefone = models.CharField(max_length=14, null=False, blank=False, unique=True)
     data_nascimento = models.DateField(null=False, blank=False)
+    area_atuacao = models.CharField(max_length=20)
+
+
+    def __str__(self):
+        return self.nome
